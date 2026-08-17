@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ashok Digital Electronics</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #222;
+}
+
+/* TOP MENU */
+.navbar {
+    background: #111;
+    padding: 12px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #00e5ff;
+}
+
+/* HEADER */
+.header {
+    background: #0066cc;
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.header p {
+    margin: 8px 0 0;
+    font-size: 18px;
+}
+
+/* MAIN BOX */
+.box {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 94%;
+    max-width: 1100px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+.box h2 {
+    color: #0066cc;
+    margin-top: 0;
+}
+
+/* SEARCH */
+.search-box {
+    width: 320px;
+    max-width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    outline: none;
+    margin: 10px;
+}
+
+.search-box:focus {
+    border-color: #00aaff;
+}
+
+/* PRODUCT AREA */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+    background: white;
+    width: 220px;
+    min-height: 250px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.22);
+}
+
+.product-card img {
+    width: 150px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #0066cc;
+}
+
+.product-card p {
+    margin: 5px;
+    color: green;
+    font-weight: bold;
+}
+
+/* ORDER BUTTON */
+.order-btn {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 7px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.order-btn:hover {
+    background: #128C7E;
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.service-card {
+    width: 220px;
+    padding: 18px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.service-card h3 {
+    color: #0066cc;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    line-height: 1.8;
+}
+
+.contact h2 {
+    color: #0066cc;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .navbar a {
+        margin: 0 7px;
+        font-size: 14px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .product-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .service-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#service">Service</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<!-- HEADER -->
+<div class="header" id="home">
+    <h1>अशोक Digital Electronics</h1>
+    <p>LED TV Repairing and Spare Parts</p>
+</div>
+
+<!-- INTRODUCTION -->
+<div class="box">
+    <h2>हमारी सेवाएँ</h2>
+    <p>
+        हम LED TV Repairing तथा LED TV Spare Parts उपलब्ध कराते हैं।
+        जरूरत के अनुसार विभिन्न प्रकार के TV Components और Boards उपलब्ध हैं।
+    </p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="box" id="products">
+
+    <h2>LED TV Parts</h2>
+
+    <input
+        type="text"
+        id="product-search"
+        class="search-box"
+        placeholder="Search LED TV parts"
+        onkeyup="searchProducts()"
+    >
+
+    <div class="products">
+
+        <div class="product-card">
+            <img src="motherboard.jpg" alt="LED TV Motherboard">
+            <h3>LED TV Motherboard</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('LED TV Motherboard')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="powerboard.jpg" alt="Power Board">
+            <h3>Power Board</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('Power Board')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="backlight.jpg" alt="LED Backlight Strip">
+            <h3>LED Backlight Strip</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('LED Backlight Strip')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="ticon.jpg" alt="T-Con Board">
+            <h3>T-Con Board</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('T-Con Board')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="panel_id.jpg" alt="LED TV Panel">
+            <h3>LED TV Panel</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('LED TV Panel')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="LEDTVParts.jpg" alt="LED TV Speaker">
+            <h3>LED TV Speaker</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('LED TV Speaker')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="remote.jpg" alt="LED TV Remote">
+            <h3>LED TV Remote</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('LED TV Remote')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="sensor.jpg" alt="LED TV Sensor">
+            <h3>LED TV Sensor</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('LED TV Sensor')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="wifi.jpg" alt="Wi-Fi Module">
+            <h3>Wi-Fi Module</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('Wi-Fi Module')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="lvds.jpg" alt="LVDS Cable">
+            <h3>LVDS Cable</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('LVDS Cable')">
+                Order Now
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- COMPONENTS -->
+<div class="box">
+
+    <h2>Electronic Components</h2>
+
+    <input
+        type="text"
+        id="component-search"
+        class="search-box"
+        placeholder="Search IC, capacitor, diode, resistor..."
+        onkeyup="searchComponents()"
+    >
+
+    <div class="products">
+
+        <div class="product-card component-card">
+            <h3>IC</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('IC')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card component-card">
+            <h3>Capacitor</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('Capacitor')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card component-card">
+            <h3>Diode</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('Diode')">
+                Order Now
+            </a>
+        </div>
+
+        <div class="product-card component-card">
+            <h3>Resistor</h3>
+            <p>Available</p>
+            <a class="order-btn" href="#" onclick="orderProduct('Resistor')">
+                Order Now
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- SERVICE -->
+<div class="box" id="service">
+
+    <h2>TV Repairing Service</h2>
+
+    <div class="services">
+
+        <div class="service-card">
+            <h3>LED TV Repairing</h3>
+            <p>LED TV में विभिन्न प्रकार की खराबियों की जाँच और Repairing.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Panel Checking</h3>
+            <p>Panel, T-Con और Display related fault checking.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Power Board Repair</h3>
+            <p>Power supply और SMPS board की जाँच और repairing.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Backlight Repair</h3>
+            <p>LED backlight और strip की checking एवं replacement.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="box contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>
+        LED TV Repairing और Spare Parts के लिए हमसे संपर्क करें।
+    </p>
+
+    <p>
+        <b>Ashok Digital Electronics</b>
+    </p>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>© 2026 Ashok Digital Electronics</p>
+    <p>LED TV Repairing & Spare Parts</p>
+</div>
+
+<script>
+
+/* PRODUCT SEARCH */
+function searchProducts() {
+
+    let input = document.getElementById("product-search")
+        .value.toLowerCase();
+
+    let products = document.querySelectorAll(
+        "#products .product-card"
+    );
+
+    products.forEach(function(product) {
+
+        let text = product.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+}
+
+
+/* COMPONENT SEARCH */
+function searchComponents() {
+
+    let input = document.getElementById("component-search")
+        .value.toLowerCase();
+
+    let products = document.querySelectorAll(
+        ".component-card"
+    );
+
+    products.forEach(function(product) {
+
+        let text = product.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+}
+
+
+/* ORDER FUNCTION */
+function orderProduct(productName) {
+
+    let message =
+        "Hello Ashok Digital Electronics,%0A%0A" +
+        "I want to order: " + productName;
+
+    /*
+      यहाँ अपने WhatsApp नंबर को डालना है।
+      उदाहरण:
+      7739778039
+    */
+
+    let phone = "7739778039";
+
+    window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
