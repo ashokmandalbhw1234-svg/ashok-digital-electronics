@@ -4,11 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ashok Digital Electronics</title>
+<title>Ashok Digital Electronics – LED TV Repairing & Parts | Bengali Para, Barharwa</title>
+<meta name="description" content="Ashok Digital Electronics – LED TV Repairing & Parts, Bengali Para, Barharwa. LED TV repairing service and spare parts including motherboard, power board, T-con board, LED panel, backlight and electronic components.">
+<meta name="robots" content="index, follow">
 
 <style>
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,24 +19,31 @@ body {
     font-family: Arial, sans-serif;
     background: #f2f2f2;
     color: #222;
+    line-height: 1.6;
 }
 
 /* TOP MENU */
 .navbar {
     background: #111;
-    padding: 12px;
+    padding: 12px 8px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar a {
+    display: inline-block;
     color: white;
     text-decoration: none;
-    margin: 0 18px;
+    margin: 0 14px;
+    padding: 4px 2px;
     font-size: 16px;
     font-weight: bold;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a:focus {
     color: #00e5ff;
 }
 
@@ -43,6 +53,14 @@ body {
     color: white;
     padding: 25px 15px;
     text-align: center;
+}
+
+.logo {
+    width: 120px;
+    max-width: 35%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
 }
 
 .header h1 {
@@ -73,18 +91,20 @@ body {
 
 /* SEARCH */
 .search-box {
+    display: block;
     width: 320px;
-    max-width: 90%;
+    max-width: 100%;
+    margin: 10px auto 20px;
     padding: 12px;
     font-size: 16px;
     border: 2px solid #007bff;
     border-radius: 8px;
     outline: none;
-    margin: 10px;
 }
 
 .search-box:focus {
     border-color: #00aaff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.25);
 }
 
 /* PRODUCT AREA */
@@ -92,6 +112,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
     gap: 15px;
     margin-top: 20px;
 }
@@ -105,7 +126,7 @@ body {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    transition: 0.3s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .product-card:hover {
@@ -116,6 +137,7 @@ body {
 .product-card img {
     width: 150px;
     height: 120px;
+    max-width: 100%;
     object-fit: contain;
     border-radius: 8px;
 }
@@ -142,9 +164,12 @@ body {
     border-radius: 7px;
     margin-top: 8px;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
-.order-btn:hover {
+.order-btn:hover,
+.order-btn:focus {
     background: #128C7E;
 }
 
@@ -153,6 +178,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
     gap: 15px;
 }
 
@@ -166,6 +192,7 @@ body {
 
 .service-card h3 {
     color: #0066cc;
+    margin-top: 0;
 }
 
 /* CONTACT */
@@ -187,12 +214,27 @@ body {
     margin-top: 30px;
 }
 
+.footer p {
+    margin: 4px 0;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
+    .navbar {
+        padding: 10px 4px;
+    }
 
     .navbar a {
-        margin: 0 7px;
+        margin: 0 6px;
         font-size: 14px;
+    }
+
+    .header {
+        padding: 22px 12px;
+    }
+
+    .logo {
+        width: 100px;
     }
 
     .header h1 {
@@ -203,14 +245,21 @@ body {
         font-size: 16px;
     }
 
-    .product-card {
-        width: 90%;
+    .box {
+        width: 94%;
+        padding: 16px;
+        margin: 15px auto;
+    }
+
+    .product-card,
+    .service-card {
+        width: 100%;
         max-width: 300px;
     }
 
-    .service-card {
-        width: 90%;
-        max-width: 300px;
+    .search-box {
+        width: 100%;
+        font-size: 16px;
     }
 }
 </style>
@@ -219,147 +268,135 @@ body {
 <body>
 
 <!-- MENU -->
-<div class="navbar">
+<nav class="navbar" aria-label="Main navigation">
     <a href="#home">Home</a>
     <a href="#products">Products</a>
+    <a href="#components">Components</a>
     <a href="#service">Service</a>
     <a href="#contact">Contact</a>
-</div>
+</nav>
 
 <!-- HEADER -->
-<div class="header" id="home">
-    <h1>अशोक Digital Electronics</h1>
-    <p>LED TV Repairing and Spare Parts</p>
-</div>
+<header class="header" id="home">
+    <img class="logo" src="logo.png" alt="Ashok Digital Electronics Logo" width="120" height="120">
+    <h1>Ashok Digital Electronics</h1>
+<p>LED TV Repairing & Parts</p>
+<p>Bengali Para, Barharwa</p>
+    
+</header>
 
 <!-- INTRODUCTION -->
-<div class="box">
+<section class="box">
     <h2>हमारी सेवाएँ</h2>
     <p>
         हम LED TV Repairing तथा LED TV Spare Parts उपलब्ध कराते हैं।
         जरूरत के अनुसार विभिन्न प्रकार के TV Components और Boards उपलब्ध हैं।
     </p>
-</div>
+</section>
 
 <!-- PRODUCTS -->
-<div class="box" id="products">
-
+<section class="box" id="products">
     <h2>LED TV Parts</h2>
 
     <input
-        type="text"
+        type="search"
         id="product-search"
         class="search-box"
         placeholder="Search LED TV parts"
-        onkeyup="searchProducts()"
+        aria-label="Search LED TV parts"
+        oninput="searchProducts()"
     >
 
     <div class="products">
 
         <div class="product-card">
-            <img src="motherboard.jpg" alt="LED TV Motherboard">
+            <a href="image/motherboard.jpg" target="_blank">
+<img src="image/motherboard.jpg" alt="LED TV Motherboard" loading="lazy" width="150" height="120">
+</a>
             <h3>LED TV Motherboard</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('LED TV Motherboard')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('LED TV Motherboard')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="powerboard.jpg" alt="Power Board">
+            <img src="powerboard.jpg" alt="Power Board" loading="lazy" width="150" height="120">
             <h3>Power Board</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('Power Board')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('Power Board')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="backlight.jpg" alt="LED Backlight Strip">
+            <img src="backlight.jpg" alt="LED Backlight Strip" loading="lazy" width="150" height="120">
             <h3>LED Backlight Strip</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('LED Backlight Strip')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('LED Backlight Strip')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="ticon.jpg" alt="T-Con Board">
+            <img src="ticon.jpg" alt="T-Con Board" loading="lazy" width="150" height="120">
             <h3>T-Con Board</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('T-Con Board')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('T-Con Board')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="panel_id.jpg" alt="LED TV Panel">
+            <a href="image/panel id.jpg" target="_blank">
+<img src="image/panel id.jpg" alt="LED TV Panel" loading="lazy" width="150" height="120">
+</a>
             <h3>LED TV Panel</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('LED TV Panel')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('LED TV Panel')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="LEDTVParts.jpg" alt="LED TV Speaker">
+            <img src="LEDTVParts.jpg" alt="LED TV Speaker" loading="lazy" width="150" height="120">
             <h3>LED TV Speaker</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('LED TV Speaker')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('LED TV Speaker')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="remote.jpg" alt="LED TV Remote">
+            <img src="remote.jpg" alt="LED TV Remote" loading="lazy" width="150" height="120">
             <h3>LED TV Remote</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('LED TV Remote')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('LED TV Remote')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="sensor.jpg" alt="LED TV Sensor">
+            <img src="sensor.jpg" alt="LED TV Sensor" loading="lazy" width="150" height="120">
             <h3>LED TV Sensor</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('LED TV Sensor')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('LED TV Sensor')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="wifi.jpg" alt="Wi-Fi Module">
+            <img src="wifi.jpg" alt="Wi-Fi Module" loading="lazy" width="150" height="120">
             <h3>Wi-Fi Module</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('Wi-Fi Module')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('Wi-Fi Module')">Order Now</a>
         </div>
 
         <div class="product-card">
-            <img src="lvds.jpg" alt="LVDS Cable">
+            <img src="lvds.jpg" alt="LVDS Cable" loading="lazy" width="150" height="120">
             <h3>LVDS Cable</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('LVDS Cable')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('LVDS Cable')">Order Now</a>
         </div>
 
     </div>
-</div>
+</section>
 
 <!-- COMPONENTS -->
-<div class="box">
-
+<section class="box" id="components">
     <h2>Electronic Components</h2>
 
     <input
-        type="text"
+        type="search"
         id="component-search"
         class="search-box"
         placeholder="Search IC, capacitor, diode, resistor..."
-        onkeyup="searchComponents()"
+        aria-label="Search electronic components"
+        oninput="searchComponents()"
     >
 
     <div class="products">
@@ -367,41 +404,32 @@ body {
         <div class="product-card component-card">
             <h3>IC</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('IC')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('IC')">Order Now</a>
         </div>
 
         <div class="product-card component-card">
             <h3>Capacitor</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('Capacitor')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('Capacitor')">Order Now</a>
         </div>
 
         <div class="product-card component-card">
             <h3>Diode</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('Diode')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('Diode')">Order Now</a>
         </div>
 
         <div class="product-card component-card">
             <h3>Resistor</h3>
             <p>Available</p>
-            <a class="order-btn" href="#" onclick="orderProduct('Resistor')">
-                Order Now
-            </a>
+            <a class="order-btn" href="https://wa.me/7739778039" onclick="return orderProduct('Resistor')">Order Now</a>
         </div>
 
     </div>
-</div>
+</section>
 
 <!-- SERVICE -->
-<div class="box" id="service">
-
+<section class="box" id="service">
     <h2>TV Repairing Service</h2>
 
     <div class="services">
@@ -427,11 +455,10 @@ body {
         </div>
 
     </div>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div class="box contact" id="contact">
-
+<section class="box contact" id="contact">
     <h2>Contact Us</h2>
 
     <p>
@@ -441,86 +468,51 @@ body {
     <p>
         <b>Ashok Digital Electronics</b>
     </p>
-
-</div>
+</section>
 
 <!-- FOOTER -->
-<div class="footer">
+<footer class="footer">
     <p>© 2026 Ashok Digital Electronics</p>
-    <p>LED TV Repairing & Spare Parts</p>
-</div>
+    <p>LED TV Repairing &amp; Spare Parts</p>
+</footer>
 
 <script>
-
 /* PRODUCT SEARCH */
 function searchProducts() {
-
-    let input = document.getElementById("product-search")
-        .value.toLowerCase();
-
-    let products = document.querySelectorAll(
-        "#products .product-card"
-    );
+    const input = document.getElementById("product-search").value.trim().toLowerCase();
+    const products = document.querySelectorAll("#products .product-card");
 
     products.forEach(function(product) {
-
-        let text = product.innerText.toLowerCase();
-
-        if (text.includes(input)) {
-            product.style.display = "block";
-        } else {
-            product.style.display = "none";
-        }
-
+        const text = product.innerText.toLowerCase();
+        product.style.display = text.includes(input) ? "block" : "none";
     });
 }
-
 
 /* COMPONENT SEARCH */
 function searchComponents() {
-
-    let input = document.getElementById("component-search")
-        .value.toLowerCase();
-
-    let products = document.querySelectorAll(
-        ".component-card"
-    );
+    const input = document.getElementById("component-search").value.trim().toLowerCase();
+    const products = document.querySelectorAll("#components .component-card");
 
     products.forEach(function(product) {
-
-        let text = product.innerText.toLowerCase();
-
-        if (text.includes(input)) {
-            product.style.display = "block";
-        } else {
-            product.style.display = "none";
-        }
-
+        const text = product.innerText.toLowerCase();
+        product.style.display = text.includes(input) ? "block" : "none";
     });
 }
 
-
 /* ORDER FUNCTION */
 function orderProduct(productName) {
-
-    let message =
-        "Hello Ashok Digital Electronics,%0A%0A" +
+    const phone = "7739778039";
+    const message =
+        "Hello Ashok Digital Electronics,\n\n" +
         "I want to order: " + productName;
 
-    /*
-      यहाँ अपने WhatsApp नंबर को डालना है।
-      उदाहरण:
-      7739778039
-    */
+    const whatsappUrl =
+        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
-    let phone = "7739778039";
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
-    window.open(
-        "https://wa.me/" + phone + "?text=" + message,
-        "_blank"
-    );
+    return false;
 }
-
 </script>
 
 </body>
