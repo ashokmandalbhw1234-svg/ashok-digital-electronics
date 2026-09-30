@@ -612,7 +612,121 @@ function showICs() {
 }
 </script>
 ```
+<!-- CAPACITOR COMPONENT -->
+<div class="component-products">
 
+    <div class="product-card component-card">
+        <h3>Capacitor</h3>
+        <p>Available</p>
+        <button class="order-btn" type="button" onclick="showCapacitors()">
+            View Capacitors
+        </button>
+    </div>
+
+</div>
+
+
+<!-- CAPACITOR PRODUCTS -->
+<div id="capacitor-products" class="products" style="display:none;">
+
+    <div class="product-card">
+        <img src="capacitor1.jpg" alt="Capacitor 1">
+        <h3>Capacitor 1</h3>
+        <p>Available</p>
+        <p>Price ₹ --</p>
+        <a class="order-btn"
+           href="https://wa.me/7739778039"
+           onclick="return orderProduct('Capacitor 1')">
+           Order Now
+        </a>
+    </div>
+
+    <div class="product-card">
+        <img src="capacitor2.jpg" alt="Capacitor 2">
+        <h3>Capacitor 2</h3>
+        <p>Available</p>
+        <p>Price ₹ --</p>
+        <a class="order-btn"
+           href="https://wa.me/7739778039"
+           onclick="return orderProduct('Capacitor 2')">
+           Order Now
+        </a>
+    </div>
+
+    <div class="product-card">
+        <img src="capacitor3.jpg" alt="Capacitor 3">
+        <h3>Capacitor 3</h3>
+        <p>Available</p>
+        <p>Price ₹ --</p>
+        <a class="order-btn"
+           href="https://wa.me/7739778039"
+           onclick="return orderProduct('Capacitor 3')">
+           Order Now
+        </a>
+    </div>
+
+    <div class="product-card">
+        <img src="capacitor4.jpg" alt="Capacitor 4">
+        <h3>Capacitor 4</h3>
+        <p>Available</p>
+        <p>Price ₹ --</p>
+        <a class="order-btn"
+           href="https://wa.me/7739778039"
+           onclick="return orderProduct('Capacitor 4')">
+           Order Now
+        </a>
+    </div>
+
+    <div class="product-card">
+        <img src="capacitor5.jpg" alt="Capacitor 5">
+        <h3>Capacitor 5</h3>
+        <p>Available</p>
+        <p>Price ₹ --</p>
+        <a class="order-btn"
+           href="https://wa.me/7739778039"
+           onclick="return orderProduct('Capacitor 5')">
+           Order Now
+        </a>
+    </div>
+
+    <div class="product-card">
+        <img src="capacitor6.jpg" alt="Capacitor 6">
+        <h3>Capacitor 6</h3>
+        <p>Available</p>
+        <p>Price ₹ --</p>
+        <a class="order-btn"
+           href="https://wa.me/7739778039"
+           onclick="return orderProduct('Capacitor 6')">
+           Order Now
+        </a>
+    </div>
+
+    <div class="product-card">
+        <img src="capacitor7.jpg" alt="Capacitor 7">
+        <h3>Capacitor 7</h3>
+        <p>Available</p>
+        <p>Price ₹ --</p>
+        <a class="order-btn"
+           href="https://wa.me/7739778039"
+           onclick="return orderProduct('Capacitor 7')">
+           Order Now
+        </a>
+    </div>
+
+</div>
+
+
+<script>
+function showCapacitors() {
+    var capacitorProducts = document.getElementById("capacitor-products");
+
+    if (capacitorProducts.style.display === "none") {
+        capacitorProducts.style.display = "grid";
+    } else {
+        capacitorProducts.style.display = "none";
+    }
+}
+</script>
    
 
        
