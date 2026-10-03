@@ -845,13 +845,34 @@ function searchComponents() {
         product.style.display = text.includes(input) ? "block" : "none";
     });
 }
-
 /* ORDER FUNCTION */
 function orderProduct(productName) {
+    const name = prompt("अपना नाम लिखिए:");
+    if (!name) return false;
+
+    const mobile = prompt("अपना मोबाइल नंबर लिखिए:");
+    if (!mobile) return false;
+
+    const address = prompt("अपना पूरा पता लिखिए:");
+    if (!address) return false;
+
+    const pin = prompt("अपना PIN Code लिखिए:");
+    if (!pin) return false;
+
+    const quantity = prompt("कितनी Quantity चाहिए?");
+    if (!quantity) return false;
+
     const phone = "7739778039";
+
     const message =
         "Hello Ashok Digital Electronics,\n\n" +
-        "I want to order: " + productName;
+        "New Order\n\n" +
+        "Product: " + productName + "\n" +
+        "Name: " + name + "\n" +
+        "Mobile: " + mobile + "\n" +
+        "Address: " + address + "\n" +
+        "PIN Code: " + pin + "\n" +
+        "Quantity: " + quantity;
 
     const whatsappUrl =
         "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
