@@ -268,6 +268,69 @@ body {
         font-size: 16px;
     }
 }
+  /* आपका पुराना CSS */
+...
+
+/* ORDER FORM */
+#order-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+}
+
+#order-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1677d2;
+}
+
+#order-form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#order-form input,
+#order-form textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+#order-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#order-form button {
+    padding: 11px 18px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#order-form button:first-of-type {
+    background: #25D366;
+    color: white;
+}
+
+#order-form button:last-of-type {
+    background: #ddd;
+    color: #222;
+    margin-left: 8px;
+}
+
+
 </style>
 </head>
 
@@ -446,11 +509,15 @@ body {
   <p>Available</p>
   <p>Price: </p>
 
-  <a href="https://wa.me/917739778039?text=Hello%20Ashok%20Digital%20Electronics%20I%20want%20to%20order%20LED%20TV%20Panel"
-     target="_blank"
-     class="order-btn">
+  <a class="order-btn"
+   href="https://wa.me/7739778039"
+   onclick="return orderProduct('LED TV Panel')">
     Order Now
-  </a>
+</a>
+     
+     
+    
+  
 </div>
     </div>
 </section>
