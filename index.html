@@ -845,29 +845,38 @@ function searchComponents() {
         product.style.display = text.includes(input) ? "block" : "none";
     });
 }
-/* ORDER FUNCTION */
+  /* ORDER FUNCTION */
 function orderProduct(productName) {
-    const name = prompt("अपना नाम लिखिए:");
-    if (!name) return false;
+    const form = document.getElementById("order-form");
+    const productInput = document.getElementById("order-product");
 
-    const mobile = prompt("अपना मोबाइल नंबर लिखिए:");
-    if (!mobile) return false;
+    productInput.value = productName;
+    form.style.display = "block";
 
-    const address = prompt("अपना पूरा पता लिखिए:");
-    if (!address) return false;
+    form.scrollIntoView({ behavior: "smooth", block: "center" });
 
-    const pin = prompt("अपना PIN Code लिखिए:");
-    if (!pin) return false;
+    return false;
+}
 
-    const quantity = prompt("कितनी Quantity चाहिए?");
-    if (!quantity) return false;
+function submitOrder() {
+    const product = document.getElementById("order-product").value;
+    const name = document.getElementById("order-name").value.trim();
+    const mobile = document.getElementById("order-mobile").value.trim();
+    const address = document.getElementById("order-address").value.trim();
+    const pin = document.getElementById("order-pin").value.trim();
+    const quantity = document.getElementById("order-quantity").value.trim();
+
+    if (!name || !mobile || !address || !pin || !quantity) {
+        alert("कृपया सभी जानकारी भरें।");
+        return false;
+    }
 
     const phone = "7739778039";
 
     const message =
         "Hello Ashok Digital Electronics,\n\n" +
-        "New Order\n\n" +
-        "Product: " + productName + "\n" +
+        "NEW ORDER\n\n" +
+        "Product: " + product + "\n" +
         "Name: " + name + "\n" +
         "Mobile: " + mobile + "\n" +
         "Address: " + address + "\n" +
@@ -877,16 +886,46 @@ function orderProduct(productName) {
     const whatsappUrl =
         "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    window.location.href = whatsappUrl;
 
     return false;
 }
-  
+
+function closeOrderForm() {
+    document.getElementById("order-form").style.display = "none";
+}
     
   function openImage(src) {
     window.open(src, "_blank");
 }
 </script>
+<!-- ORDER FORM -->
+<div id="order-form" style="display:none;">
 
+    <h2>Place Your Order</h2>
+
+    <label>Product</label>
+    <input type="text" id="order-product" readonly>
+
+    <label>Name</label>
+    <input type="text" id="order-name" placeholder="Enter your name">
+
+    <label>Mobile Number</label>
+    <input type="tel" id="order-mobile" placeholder="Enter mobile number">
+
+    <label>Full Address</label>
+    <textarea id="order-address" placeholder="Enter your full address"></textarea>
+
+    <label>PIN Code</label>
+    <input type="text" id="order-pin" placeholder="Enter PIN Code">
+
+    <label>Quantity</label>
+    <input type="number" id="order-quantity" value="1" min="1">
+
+    <button type="button" onclick="submitOrder()">Submit Order</button>
+
+    <button type="button" onclick="closeOrderForm()">Cancel</button>
+
+</div>
 </body>
 </html>
