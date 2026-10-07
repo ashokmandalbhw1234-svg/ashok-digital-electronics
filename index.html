@@ -943,8 +943,7 @@ function orderProduct(productName) {
 
     return false;
 }
-
-function submitOrder() {
+ async function submitOrder() {
     const product = document.getElementById("order-product").value;
     const name = document.getElementById("order-name").value.trim();
     const mobile = document.getElementById("order-mobile").value.trim();
@@ -957,25 +956,52 @@ function submitOrder() {
         return false;
     }
 
-    const phone = "7739778039";
+    try {
+        const ordersRef = window.firebaseRef(
+            window.firebaseDatabase,
+            "orders"
+        );
 
-    const message =
-        "Hello Ashok Digital Electronics,\n\n" +
-        "NEW ORDER\n\n" +
-        "Product: " + product + "\n" +
-        "Name: " + name + "\n" +
-        "Mobile: " + mobile + "\n" +
-        "Address: " + address + "\n" +
-        "PIN Code: " + pin + "\n" +
-        "Quantity: " + quantity;
+        const newOrderRef = window.firebasePush(ordersRef);
 
-    const whatsappUrl =
-        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+        await window.firebaseSet(newOrderRef, {
+            product: product,
+            name: name,
+            mobile: mobile,
+            address: address,
+            pin: pin,
+            quantity: quantity,
+            date: new Date().toLocaleString("en-IN")
+        });
 
-    window.location.href = whatsappUrl;
+        const phone = "7739778039";
+
+        const message =
+            "Hello Ashok Digital Electronics,\n\n" +
+            "NEW ORDER\n\n" +
+            "Product: " + product + "\n" +
+            "Name: " + name + "\n" +
+            "Mobile: " + mobile + "\n" +
+            "Address: " + address + "\n" +
+            "PIN Code: " + pin + "\n" +
+            "Quantity: " + quantity;
+
+        const whatsappUrl =
+            "https://wa.me/" + phone +
+            "?text=" + encodeURIComponent(message);
+
+        alert("Order successfully submitted!");
+
+        window.location.href = whatsappUrl;
+
+    } catch (error) {
+        console.error("Firebase Error:", error);
+        alert("Order save नहीं हो पाया। कृपया दोबारा कोशिश करें।");
+    }
 
     return false;
 }
+
 
 function closeOrderForm() {
     document.getElementById("order-form").style.display = "none";
@@ -1013,5 +1039,38 @@ function closeOrderForm() {
     <button type="button" onclick="closeOrderForm()">Cancel</button>
 
 </div>
+ <!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+  import {
+    getDatabase,
+    ref,
+    push,
+    set
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyC3EqhdFFhJmcxCtoMQ7Snz3QSBloGHp9Q",
+    authDomain: "ashok-digital-electronics.firebaseapp.com",
+    databaseURL: "https://ashok-digital-electronics-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ashok-digital-electronics",
+    storageBucket: "ashok-digital-electronics.firebasestorage.app",
+    messagingSenderId: "331985299248",
+    appId: "1:331985299248:web:14d174708479482bd44af5"
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+
+  // दूसरे JavaScript function के लिए उपलब्ध कराना
+  window.firebaseDatabase = database;
+  window.firebaseRef = ref;
+  window.firebasePush = push;
+  window.firebaseSet = set;
+</script>
 </body>
 </html>
